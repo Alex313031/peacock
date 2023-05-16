@@ -1,0 +1,45 @@
+"build": {
+	"appId": "com.peacockweb.peacock",
+	"productName": "Peacock",
+	"win": {
+		"target": [
+			"nsis",
+			"zip"
+		],
+		"icon": "images/peacock.ico"
+	},
+	"mac": {
+		"category": "productivity",
+		"target": [
+			"dmg"
+		],
+		"icon": "images/peacock.png"
+	},
+	"linux": {
+		"category": "Network",
+		"target": [
+			"AppImage",
+			"deb"
+		],
+		"icon": "images/peacock.png"
+	},
+	"nsis": {
+		"oneClick": "false",
+		"allowToChangeInstallationDirectory": "true",
+		"perMachine": "true"
+	},
+	"fileAssociations": [
+		{
+			"name": "Peacock HTML Document",
+			"description": "Peacock",
+			"ext": "html",
+			"icon": "../images/peacock.ico"
+		},
+		{
+			"name": "Peacock WebP Image",
+			"description": "Peacock WebP Image",
+			"ext": "webp",
+			"icon": "../images/peacock.ico"
+		}
+	]
+}

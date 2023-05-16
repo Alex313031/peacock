@@ -1,76 +1,39 @@
 {
 	"name": "peacock",
+	"appName": "Peacock",
 	"productName": "Peacock",
-	"version": "2.4.0-beta.4",
-	"description": "Open source experimental private-by-default web browser",
+	"version": "2.5.0",
+	"author": "Alex313031 <alex313031@gmail.com>",
+	"license": "MIT",
+	"description": "Open source, experimental, private-by-default web browser built with Electron.",
 	"main": "main.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/peacockweb/peacock"
-	},
 	"keywords": [
 		"browser",
+		"electron",
 		"web",
 		"security",
 		"privacy",
 		"internet",
 		"anonymity"
 	],
-	"build": {
-		"appId": "com.peacockweb.peacock",
-		"productName": "Peacock",
-		"win": {
-			"target": [
-				"nsis",
-				"zip"
-			],
-			"icon": "images/peacock.ico"
-		},
-		"mac": {
-			"category": "productivity",
-			"target": [
-				"dmg"
-			],
-			"icon": "images/peacock.png"
-		},
-		"linux": {
-			"category": "Network",
-			"target": [
-				"AppImage",
-				"deb"
-			],
-			"icon": "images/peacock.png"
-		},
-		"nsis": {
-			"oneClick": "false",
-			"allowToChangeInstallationDirectory": "true",
-			"perMachine": "true"
-		},
-		"fileAssociations": [
-			{
-				"name": "Peacock HTML Document",
-				"description": "Peacock",
-				"ext": "html",
-				"icon": "../images/peacock.ico"
-			},
-			{
-				"name": "Peacock WebP Image",
-				"description": "Peacock WebP Image",
-				"ext": "webp",
-				"icon": "../images/peacock.ico"
-			}
-		]
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Alex313031/peacock"
 	},
 	"scripts": {
-		"start": "electron .",
-		"build-linux": "electron-builder --linux --publish always",
-		"build-win": "electron-builder --win --publish always"
+		"start": "electron --no-sandbox .",
+		"clean": "rimraf dist && rimraf node_modules",
+		"distclean": "rimraf dist",
+		"build": "electron-builder --dir",
+		"build-linux": "electron-builder --linux",
+		"build-win": "electron-builder --win",
+		"build-mac": "electron-builder --mac"
 	},
-	"author": "Spike Codes <19519553+spikecodes@users.noreply.github.com>",
-	"license": "MIT",
 	"devDependencies": {
-		"electron": "^10.0.0-beta.1",
-		"electron-builder": "^22.6.1"
+		"asar": "3.2.0",
+		"electron": "11.5.0",
+		"electron-builder": "22.14.13",
+		"rimraf": "3.0.2"
 	},
 	"dependencies": {
 		"@cliqz/adblocker-electron": "^1.15.0",
