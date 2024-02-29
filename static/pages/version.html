@@ -38,7 +38,12 @@
         </tr>
 
         <tr>
-        <td>Chrome</td>
+        <td>Electron</td>
+        <td id="electron">ELECTRON_VERSION_HERE</td>
+        </tr>
+
+        <tr>
+        <td>Chromium</td>
         <td id="chrome">CHROME_VERSION_HERE</td>
         </tr>
 
@@ -48,8 +53,8 @@
         </tr>
 
         <tr>
-        <td>Electron</td>
-        <td id="electron">ELECTRON_VERSION_HERE</td>
+        <td>V8</td>
+        <td id="v8">V8_VERSION_HERE</td>
         </tr>
 
         <tr>
@@ -69,9 +74,10 @@
 
     function setVersions(versions) {
       document.getElementById('user-agent').innerHTML = getUserAgent();
+      document.getElementById('electron').innerHTML = versions.electron;
       document.getElementById('chrome').innerHTML = versions.chrome;
       document.getElementById('node').innerHTML = versions.node;
-      document.getElementById('electron').innerHTML = versions.electron;
+      document.getElementById('v8').innerHTML = versions.v8;
       document.getElementById('peacock').innerHTML = versions.peacock;
 
       document.body.style.display = 'block';

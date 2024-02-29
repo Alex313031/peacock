@@ -26,7 +26,12 @@ exports.initialize = (bounds) => {
 		show: false,
 		webPreferences: {
 			nodeIntegration: true,
-			enableRemoteModule: true
+			enableRemoteModule: true,
+			webviewTag: true,
+			devTools: true,
+			sandbox: false,
+			experimentalFeatures: true,
+			contextIsolation: false
 		}
 	});
 	

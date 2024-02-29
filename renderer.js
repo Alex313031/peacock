@@ -362,7 +362,12 @@ async function toggleAdblock() {
 		height: 60,
 		webPreferences: {
 			nodeIntegration: true,
-			zoomFactor: 0.5
+			zoomFactor: 0.5,
+			webviewTag: true,
+			devTools: true,
+			sandbox: false,
+			experimentalFeatures: true,
+			contextIsolation: false
 		},
 		transparent: true,
 		parent: remote.getCurrentWindow(),
@@ -440,7 +445,12 @@ async function initAlert() {
 		show: false,
 		webPreferences: {
 			nodeIntegration: true,
-			enableRemoteModule: true
+			enableRemoteModule: true,
+			webviewTag: true,
+			devTools: true,
+			sandbox: false,
+			experimentalFeatures: true,
+			contextIsolation: false
 		},
 		parent: remote.getCurrentWindow(),
 		icon: join(__dirname, 'images/peacock.png')
@@ -555,7 +565,12 @@ async function showSnackbar(
 		parent: remote.getCurrentWindow(),
 		webPreferences: {
 			nodeIntegration: true,
-			enableRemoteModule: true
+			enableRemoteModule: true,
+			webviewTag: true,
+			devTools: true,
+			sandbox: false,
+			experimentalFeatures: true,
+			contextIsolation: false
 		}
 	});
 
@@ -608,7 +623,12 @@ async function toggleSiteInfo() {
 			parent: remote.getCurrentWindow(),
 			webPreferences: {
 				nodeIntegration: true,
-				enableRemoteModule: true
+				enableRemoteModule: true,
+				webviewTag: true,
+				devTools: true,
+				sandbox: false,
+				experimentalFeatures: true,
+				contextIsolation: false
 			}
 		});
 
@@ -732,7 +752,12 @@ async function initCertDialog() {
 		height: 600,
 		webPreferences: {
 			nodeIntegration: true,
-			enableRemoteModule: true
+			enableRemoteModule: true,
+			webviewTag: true,
+			devTools: true,
+			sandbox: false,
+			experimentalFeatures: true,
+			contextIsolation: false
 		},
 		show: false,
 		parent: remote.getCurrentWindow(),

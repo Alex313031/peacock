@@ -38,7 +38,12 @@ exports.initDownloads = async () => {
 		hasShadow: false,
 		webPreferences: {
 			nodeIntegration: true,
-			enableRemoteModule: true
+			enableRemoteModule: true,
+			webviewTag: true,
+			devTools: true,
+			sandbox: false,
+			experimentalFeatures: true,
+			contextIsolation: false
 		}
 	});
 
@@ -229,7 +234,13 @@ exports.newView = function (url='peacock://newtab', active=true) {
 
 	let view = new BrowserView({
 		webPreferences: {
-			preload: join(__dirname, 'preload.js')
+			preload: join(__dirname, 'preload.js'),
+			enableRemoteModule: true,
+			webviewTag: true,
+			devTools: true,
+			sandbox: false,
+			experimentalFeatures: true,
+			contextIsolation: false
 		}
 	});
 	let tabSession = view.webContents.session;

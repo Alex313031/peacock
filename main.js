@@ -19,10 +19,15 @@ async function createWindow() {
 		webPreferences: {
 			nodeIntegration: true,
 			enableRemoteModule: true,
-			backgroundThrottling: false
+			backgroundThrottling: false,
+			webviewTag: true,
+			devTools: true,
+			sandbox: false,
+			experimentalFeatures: true,
+			contextIsolation: false
 		},
 		width: 1280,
-		height: 720,
+		height: 768,
 		icon: join(__dirname, 'images/peacock.png')
 	});
 
@@ -34,7 +39,7 @@ async function createWindow() {
 		slashes: true
 	}));
 
-	mainWindow.maximize();
+	//mainWindow.maximize();
 
 	mainWindow.webContents.on('crashed', async (e) => console.log('crashed', e));
 
@@ -43,8 +48,8 @@ async function createWindow() {
 		mainWindow = null;
 	});
 
-	const { autoUpdater } = require("electron-updater");
-	autoUpdater.checkForUpdatesAndNotify();
+	//const { autoUpdater } = require("electron-updater");
+	//autoUpdater.checkForUpdatesAndNotify();
 }
 
 app.on('ready', createWindow);
@@ -62,7 +67,7 @@ app.on('window-all-closed', async () => {
 });
 
 app.on('renderer-process-crashed', async () => {
-	console.log('rp-crashed');
+	console.warn('renderer process crashed!');
 });
 
 app.on('activate', async () => {

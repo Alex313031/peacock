@@ -2,7 +2,7 @@
 	"name": "peacock",
 	"appName": "Peacock",
 	"productName": "Peacock",
-	"version": "2.5.0",
+	"version": "2.6.0",
 	"author": "Alex313031 <alex313031@gmail.com>",
 	"license": "MIT",
 	"description": "Open source, experimental, private-by-default web browser built with Electron.",
@@ -24,25 +24,33 @@
 		"start": "electron --no-sandbox .",
 		"clean": "rimraf dist && rimraf node_modules",
 		"distclean": "rimraf dist",
+		"burn": "rimraf package-lock.json",
 		"build": "electron-builder --dir",
-		"build-linux": "electron-builder --linux",
-		"build-win": "electron-builder --win",
-		"build-mac": "electron-builder --mac"
+		"distlinux": "electron-builder --l",
+		"distwin": "electron-builder -w",
+		"distmac": "electron-builder -m"
 	},
 	"devDependencies": {
 		"asar": "3.2.0",
-		"electron": "11.5.0",
+		"electron": "12.2.3",
 		"electron-builder": "22.14.13",
 		"rimraf": "3.0.2"
 	},
 	"dependencies": {
-		"@cliqz/adblocker-electron": "^1.15.0",
-		"cross-fetch": "^3.0.4",
-		"electron-context-menu": "^2.0.1",
-		"electron-store": "^5.1.1",
-		"electron-updater": "^4.3.1",
-		"sortablejs": "^1.10.2",
-		"uuid": "^8.1.0",
-		"v8-compile-cache": "^2.1.0"
+		"@cliqz/adblocker": "1.20.6",
+		"@cliqz/adblocker-content": "1.20.6",
+		"@cliqz/adblocker-electron": "1.20.6",
+		"@cliqz/adblocker-electron-preload": "1.20.6",
+		"@cliqz/adblocker-extended-selectors": "1.20.6",
+		"@electron/remote": "2.1.2",
+		"cross-fetch": "3.1.8",
+		"electron-context-menu": "2.5.2",
+		"electron-store": "5.2.0",
+		"sortablejs": "1.15.2",
+		"uuid": "8.3.2",
+		"v8-compile-cache": "2.4.0"
+	},
+	"resolutions": {
+		"electron": "12.2.3"
 	}
 }
